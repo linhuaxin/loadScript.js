@@ -19,9 +19,9 @@ function loadScript(url, callback) {
 }
 
 // 严格确保 A -> B -> C，依次下载脚本文件
-dynamicScriptElement('A.js', function() {
-  dynamicScriptElement('B.js', function() {
-    dynamicScriptElement('C.js', function() {
+loadScript('A.js', function() {
+  loadScript('B.js', function() {
+    loadScript('C.js', function() {
       console.log('All files are loaded')
     })
   })
