@@ -14,6 +14,23 @@ function shuffle(arr) {
   }
 }
 
+function findWhere(arr, properties) {
+  for(let i = 0; i < arr.length; i++) {
+    let item = arr[i]
+    let isSame = true
+    for (let key in properties) {
+      if (properties.hasOwnProperty(key) &&
+        properties[key] !== item[key]) {
+        isSame = false
+        break
+      }
+    }
+    if (isSame) {
+      return item
+    }
+  }
+}
+
 /**
  * 在 array 中找到 key 等于 value 的 object
  */
@@ -28,5 +45,6 @@ function findObjectInArray(array, key, value) {
 
 export default {
   shuffle,
+  findWhere,
   findObjectInArray
 }
