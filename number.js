@@ -26,6 +26,28 @@ function dicimalLength(num) {
   }
 }
 
+function toFloat(val) {
+  if (typeof val === 'string') {
+    val = val.trim()
+  }
+  if (!val) {
+    return 0
+  }
+  return parseFloat(val)
+}
+
+function toInt(val) {
+  if (typeof val === 'string') {
+    val = val.trim()
+  }
+  if (!val) {
+    return 0
+  }
+  return parseInt(val)
+}
+
 export default {
-  doubleAdd
+  doubleAdd,
+  toFloat,
+  toInt
 }
